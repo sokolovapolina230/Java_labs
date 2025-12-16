@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    <Appenders>
+
+        <!-- Консоль: тільки INFO і ERROR -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <ThresholdFilter level="info"/>
+            <PatternLayout pattern="[%level] %msg%n"/>
+        </Console>
+
+        <!-- Файл: DEBUG + INFO + ERROR -->
+        <File name="FileAppender" fileName="encrypt.log">
+            <ThresholdFilter level="debug"/>
+            <PatternLayout pattern="[%level] %msg%n"/>
+        </File>
+
+    </Appenders>
+
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="FileAppender"/>
+        </Root>
+    </Loggers>
+
+</Configuration>
+
